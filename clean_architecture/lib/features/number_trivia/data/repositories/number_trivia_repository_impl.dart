@@ -1,10 +1,10 @@
 import 'package:clean_architecture/core/error/exceptions.dart';
+import 'package:clean_architecture/core/network/network_info.dart';
 import 'package:dartz/dartz.dart';
 
 import 'package:meta/meta.dart';
 
 import 'package:clean_architecture/core/error/failures.dart';
-import 'package:clean_architecture/core/platform/network_info.dart';
 import 'package:clean_architecture/features/number_trivia/data/datasources/number_trivia_local_data_source.dart';
 import 'package:clean_architecture/features/number_trivia/data/datasources/number_trivia_remote_data_source.dart';
 
@@ -12,7 +12,7 @@ import 'package:clean_architecture/features/number_trivia/domain/entities/number
 
 import '../../domain/repositories/number_trivia_repository.dart';
 
-typedef Future<NumberTrivia> _ConcreteOrRandomChooser();
+typedef _ConcreteOrRandomChooser = Future<NumberTrivia> Function();
 
 class NumberTriviaRepositoryImpl implements NumberTriviaRepository {
   NumberTriviaRepositoryImpl(
