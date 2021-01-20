@@ -76,7 +76,7 @@ void main() {
         // arrange
         when(mockRemoteDataSource.getConcreteNumberTrivia(any)).thenAnswer((_) async => tNumberTriviaModel);
         // act
-        final result = await repository.getConcreteNumberTrivia(tNumber);
+        await repository.getConcreteNumberTrivia(tNumber);
         // assert
         verify(mockRemoteDataSource.getConcreteNumberTrivia(tNumber));
         verify(mockLocalDataSource.cacheNumberTrivia(tNumberTriviaModel));

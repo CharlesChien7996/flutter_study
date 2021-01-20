@@ -11,3 +11,4 @@ abstract class NumberTriviaRemoteDataSource {
   /// Throws a [ServiceException] for all error codes.
   Future<NumberTriviaModel> getRandomNumberTrivia();
 }
+
